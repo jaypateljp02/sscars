@@ -1,0 +1,129 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    transition: var(--transition-slow);
+    background: transparent;
+}
+
+.navbar.scrolled {
+    height: 70px;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.logo-ss {
+    color: var(--accent-gold);
+}
+
+.logo-cars {
+    color: var(--text-primary);
+}
+
+.logo-loc {
+    font-size: 0.6rem;
+    background: var(--accent-gold);
+    color: #000;
+    padding: 2px 4px;
+    border-radius: 2px;
+    margin-left: 4px;
+}
+
+.desktop-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link:hover {
+    color: var(--accent-gold);
+}
+
+.admin-btn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.mobile-toggle {
+    display: none;
+    color: var(--text-primary);
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: var(--bg-primary);
+        padding: 2rem;
+        gap: 1.5rem;
+        transform: translateX(100%);
+        transition: var(--transition-slow);
+        z-index: 999;
+    }
+
+    .mobile-menu.open {
+        transform: translateX(0);
+    }
+
+    .mobile-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+
+    .icon {
+        color: var(--accent-gold);
+    }
+}

@@ -1,0 +1,140 @@
+.cars-page {
+    padding-top: 120px !important;
+    min-height: 100vh;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.car-card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-gold);
+}
+
+.car-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.car-card:hover .car-image img {
+    transform: scale(1.1);
+}
+
+.sold-overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #ff4444;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    font-weight: 800;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.car-info {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.car-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    text-transform: none;
+}
+
+.car-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+}
+
+.car-stats {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-top: 1px solid var(--glass-border);
+    margin-top: auto;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.btn-whatsapp {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background: #128C7E;
+    color: #fff;
+    padding: 0.8rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+}
+
+.btn-whatsapp:hover {
+    background: #075E54;
+}
+
+.loading {
+    text-align: center;
+    padding: var(--spacing-xl);
+    font-size: 1.2rem;
+    color: var(--accent-gold);
+}
+
+@media (max-width: 480px) {
+    .cars-grid {
+        grid-template-columns: 1fr;
+    }
+}

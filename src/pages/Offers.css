@@ -1,0 +1,145 @@
+.offers-page {
+    padding-top: 120px !important;
+    min-height: 100vh;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.offer-card {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-fast);
+}
+
+.offer-card:hover {
+    transform: scale(1.02);
+    border-color: var(--accent-gold);
+}
+
+.offer-card.yellow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--accent-yellow);
+}
+
+.offer-card.gold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--accent-gold);
+}
+
+.offer-card.silver::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--accent-silver);
+}
+
+.offer-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: var(--bg-tertiary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+}
+
+.offer-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.offer-content p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.offer-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expiry {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.btn-offer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-gold);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.btn-offer:hover {
+    color: #fff;
+}
+
+.finance-cta {
+    margin-top: var(--spacing-xl);
+    padding: 4rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: var(--spacing-xl);
+}
+
+.cta-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.cta-text p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .finance-cta {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .offer-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+}
