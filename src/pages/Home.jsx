@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ShieldCheck, ArrowRight, Phone, MessageCircle } from 'lucide-react';
 import Testimonials from '../components/Testimonials';
 import '../styles/Testimonials.css';
@@ -24,12 +25,12 @@ const Home = () => {
                     </p>
 
                     <div className="hero-ctas fade-in">
-                        <a href="/cars" className="btn btn-primary">
+                        <Link to="/cars" className="btn btn-primary">
                             Explore Showroom <ArrowRight size={18} />
-                        </a>
-                        <a href="/contact" className="btn btn-outline glass">
+                        </Link>
+                        <Link to="/contact" className="btn btn-outline glass">
                             Visit Us
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
