@@ -13,14 +13,14 @@ const Home = () => {
                 <div className="container hero-content">
                     <div className="badge-certified fade-in">
                         <ShieldCheck size={20} className="text-gold" />
-                        <span>Certified Pre-Owned</span>
+                        <span>Premium Quality Assured</span>
                     </div>
 
                     <h1 className="fade-in">
                         SS CARS <span className="text-gold">RATNAGIRI</span>
                     </h1>
                     <p className="tagline fade-in">
-                        Certified Pre-Owned Cars | Premium Accessories
+                        Best Quality Used Cars | Luxury Accessories
                     </p>
 
                     <div className="hero-ctas fade-in">

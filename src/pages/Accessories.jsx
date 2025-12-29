@@ -12,6 +12,7 @@ const Accessories = () => {
     }, []);
 
     const fetchAccessories = async () => {
+        let items = [];
         try {
             const { data, error } = await supabase
                 .from('accessories')
@@ -20,9 +21,18 @@ const Accessories = () => {
 
             if (error) throw error;
 
-            if (data) {
-                // Group by category
-                const grouped = data.reduce((acc, item) => {
+            if (data && data.length > 0) {
+                items = data;
+            } else {
+                items = defaultAccessories;
+            }
+        } catch (error) {
+            console.error('Error fetching accessories:', error);
+            items = defaultAccessories;
+        } finally {
+            // Processing
+            if (items.length > 0) {
+                const grouped = items.reduce((acc, item) => {
                     const cat = item.category || 'General';
                     if (!acc[cat]) acc[cat] = [];
                     acc[cat].push(item);
@@ -33,16 +43,18 @@ const Accessories = () => {
                     name: key,
                     items: grouped[key]
                 }));
-
                 setCategories(catArray);
             }
-        } catch (error) {
-            console.error('Error fetching accessories:', error);
-            // Optional: fallback to static data if needed, but for now just log
-        } finally {
             setLoading(false);
         }
     };
+
+    const defaultAccessories = [
+        { name: "Premium Seat Covers", price: "Starts ₹8,500", image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", category: "Interior Upgrades" },
+        { name: "Android Stereo Systems", price: "Starts ₹12,000", image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", category: "Interior Upgrades" },
+        { name: "LED Projector Lights", price: "Starts ₹5,500", image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", category: "Exterior & Lighting" },
+        { name: "Ceramic Coating", price: "Starts ₹15,000", image: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80", category: "Exterior & Lighting" }
+    ];
 
     return (
         <div className="accessories-page container">
